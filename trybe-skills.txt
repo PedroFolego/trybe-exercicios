@@ -3,6 +3,7 @@ O que eu vou aprender na Trybe
  - Unix
  - Bash
  - Git
-Teste com Dev1
  - https
  - JS
+ - BackEnd
+ - FrontEnd
