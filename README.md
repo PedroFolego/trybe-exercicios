@@ -1,1 +1,1 @@
-Esse é um teste para aprender como usa o git e gitHub
+Repositório para as aulas da Trybe
