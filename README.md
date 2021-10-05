@@ -1,1 +1,3 @@
-Criando o primeiro site com HTML 
+
+Repositório para as aulas da Trybe
+
