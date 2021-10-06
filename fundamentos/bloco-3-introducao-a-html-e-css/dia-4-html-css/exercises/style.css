@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  color: white;
+  background-color: blue;
+  padding: 20px;
+  text-align: center;
+}
+.nav {
+  background-color: tomato;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+  margin: 20px;
+  padding: 5px;
+  border: 3px solid black;
+}
+
+.main {
+  font-size: 20px;
+  color: antiquewhite;
+  background-image: url(shrimp2.jpg);
+  background-size: cover;
+  width: 700px;
+  margin: auto;
+
+}
+
+.footer {
+  background-color: crimson;
+  color: chartreuse;
+  font-size: 25px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-top: 20px;
+  float: right;
+
+}
+
+
+
+
+
