@@ -13,7 +13,6 @@
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
-  width: fit-content;
   margin: auto;
 }
 .nav a {
@@ -21,17 +20,53 @@
   color: black;
   margin: 20px;
   padding: 5px;
-  border: 3px solid black;
+ 
+  border-radius: 20px;
+  font-size: 20px;
 }
 
 .main {
   font-size: 20px;
-  color: antiquewhite;
-  background-image: url(shrimp2.jpg);
-  background-size: cover;
+  color: brown;
+  background-color: aquamarine;
   width: 700px;
   margin: auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-bottom: 5px;
 }
+
+.imgs {
+  padding: 25px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.article {
+  padding: 10px;
+  background-color: blanchedalmond;
+  margin: 5px;
+  border-radius: 20px;
+  
+}
+
+.article table {
+  border: 2px solid black;
+
+}
+.article h2{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.article p {
+  margin-top: 10px;
+}
+
+
+
 
 .footer {
   background-color: crimson;
