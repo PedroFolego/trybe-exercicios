@@ -231,6 +231,51 @@ verifica('pedro', 'ro'); */
 
 
 //Bonus
+//1
+
+/* function numberRoman(string) {
+  let = numberTranform = [];
+  for (i = 0; i < string.length; i += 1) {
+    
+    switch (string[i]) {
+      case 'I':
+        numberTranform.push(1);
+        break;
+      case 'V':
+        numberTranform.push(5);
+        break;
+      case 'X':
+        numberTranform.push(10);
+        break;
+      case 'L':
+        numberTranform.push(50);
+        break;
+      case 'C':
+        numberTranform.push(100);
+        break;
+      case 'D':
+        numberTranform.push(500);
+        break;
+      case 'M':
+        numberTranform.push(1000);
+        break;
+    }
+  }
+
+    let result = numberTranform[0];
+    if (result >= numberTranform[1] ) {
+      for (j = 1; j < numberTranform.length; j += 1){
+        result += numberTranform[j];
+    }
+    } else {
+      for (j = 1; j < numberTranform.length; j += 1){
+        result = numberTranform[j] - result;
+    }
+  }
+  return console.log(result);
+}
+numberRoman('IX'); */
+
 //2
 
 /* function arrayOfNumbers(array) {
@@ -255,7 +300,7 @@ arrayOfNumbers(vector); */
 
 //3 melancia, abacate, uva, laranja, jaca, pera, 
 
-const basket = [
+/* const basket = [
   'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
   'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
   'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
@@ -295,7 +340,7 @@ function numberOfFruit(array) {
 };
 
 numberOfFruit(basket);
-
+ */
 //exercício 1:
 // Crie uma função que calcule a área e o perímetro de um quadrilátero qualquer
 // essa função deve receber dois parâmetros: base e altura
