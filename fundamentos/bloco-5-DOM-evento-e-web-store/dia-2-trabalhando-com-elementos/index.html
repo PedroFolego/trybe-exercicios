@@ -61,46 +61,71 @@
 
   <script>
     // COLOQUE SEU CÓDIGO AQUI
-    function createChild(tag, element) {
-      let selectTag = document.querySelector(tag);
-      let createElement = document.createElement(element);
+    let tagBody = document.querySelector('body');
 
-      selectTag.appendChild(createElement);
+    let title = document.createElement('h1');
+    title.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+    title.classList.add('title');
+    tagBody.appendChild(title);
+
+    let createMain = document.createElement('main');
+    createMain.classList.add('main-content');
+    tagBody.appendChild(createMain);
+    
+    let createSectionCenter = document.createElement('section');
+    createSectionCenter.classList.add('center-content');
+    createMain.appendChild(createSectionCenter);
+
+    let createSectionLeft = document.createElement('section');
+    createSectionLeft.classList.add('left-content');
+    createMain.appendChild(createSectionLeft);
+
+    let createSectionRight = document.createElement('section');
+    createSectionRight.classList.add('right-content');
+    createSectionRight.style.marginRight = 'auto';
+    createMain.appendChild(createSectionRight);
+
+    let createPSCenter = document.createElement('p');
+    createPSCenter.innerHTML = 'Ola Pessoas de outros planetas!!';
+    createSectionCenter.appendChild(createPSCenter);
+
+    let foto = document.createElement('img');
+    foto.src = 'https://picsum.photos/200';
+    foto.classList.add('small-image');
+    createSectionLeft.appendChild(foto);
+
+    let list = document.createElement('ul');
+    createSectionRight.appendChild(list);
+    let numbers = [];
+    for(i = 1; i <= 10; i += 1) {
+      numbers.push(i);
+    };
+    
+    for (number of numbers) {
+      let addNumero = document.createElement('li');
+      addNumero.innerHTML = number;
+      list.appendChild(addNumero);
+    };
+
+    for(j = 0; j < 3; j += 1){
+      let createH3 = document.createElement('h3');
+      createH3.classList.add('description')
+      createMain.appendChild(createH3);
     }
-    function createClasses(tag, position, classes) {
-      let selectTag = document.querySelectorAll(tag)[position];
-      selectTag.classList.add(classes);
-    }
-    function createText(tag, text) {
-      let header = document.querySelector(tag);
-      header.innerHTML = text;
-    }
+    let firstH3 = document.querySelectorAll('h3')[0];
+    let secondtH3 = document.querySelectorAll('h3')[1];
+    let thirdtH3 = document.querySelectorAll('h3')[2];
+    
+    firstH3.innerHTML = 'primeiro h3';
+    secondtH3.innerHTML = 'segundo h3';
+    thirdtH3.innerHTML = 'terceiro h3';
 
-    // let section1 = document.querySelectorAll('section')[1];
-    // let foto = document.createElement('img');
-    // section1.appendChild(foto);
+    createMain.removeChild(createSectionLeft);
 
-    console.log(document.getElementsByClassName('img'))
-    // create tags
-    createChild('body', 'h1');
-    createChild('body', 'main');
-    createChild('main', 'section');
-    createChild('section', 'p');
-    createChild('main', 'section');
-    createChild('main', 'section');
+    createSectionRight.parentElement.style.background = 'green';
 
-
-    // add classes
-    createClasses('main', '0', 'main-content');
-    createClasses('section', '0', 'center-content');
-    createClasses('section', '1', 'left-content');
-    createClasses('section', '2', 'right-content');
-
-    // texts
-    createText('h1', 'Exercício 5.2 - JavaScript DOM');
-    createText('p', '<strong>A minha namorada é sempre muito linda e maravilhosa!!!</strong>');
-
-      //console.log(document.querySelectorAll('main'));
+    list.lastChild.remove(numbers);
+    list.lastChild.remove(numbers);
 
   </script>
 </body>
