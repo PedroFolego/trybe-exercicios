@@ -88,23 +88,65 @@ buttonFriday();
 
 function zoomDay() {
   const daysLi = document.getElementsByClassName('day');
-  for( let day of daysLi) {
-    day.addEventListener('mouseover', function() {
+  for (let day of daysLi) {
+    day.addEventListener('mouseover', function () {
       day.style.fontSize = '30px';
     })
   }
-  for( let day of daysLi) {
-    day.addEventListener('mouseout', function() {
+  for (let day of daysLi) {
+    day.addEventListener('mouseout', function () {
       day.style.fontSize = '20px';
     })
-}
+  }
 }
 zoomDay();
 
-const daysLi = document.getElementsByClassName('day');
+function myTasks(title, color) {
+
+  const divTasks = document.getElementsByClassName('my-tasks')[0];
+
+  const task = document.createElement('span');
+  task.innerHTML = title;
+
+  divTasks.appendChild(task);
+
+  const divCircle = document.createElement('div');
+  divCircle.classList.add('task');
+  divCircle.style.background = color;
+  divTasks.appendChild(divCircle);
+
+  divCircle.addEventListener('click', function (event) {
+    if (divCircle.classList[1] !== ('selected')) {
+      divCircle.classList.add('selected');
+
+    } else {
+      divCircle.classList.remove('selected');
+    };
+    console.log(event.target.classList);
+
+    const daysColor = document.querySelectorAll('.day');
+    
+    // \Exercicio 10 pra terminar
+
+    // for (let day of daysColor) {
+    //   day.addEventListener('click', function () {
+    //     if (day.classList[1] == ('selected') && day.style.background !== color) {
+    //       day.style.background = color;
+    //     } else if (day.classList[1] == ('selected') && day.style.background == color) {
+    //       day.style.background = 'rgb(119,119,119)';
+    //     }
+    //   })
+
+
+    // }
+  })
+}
+myTasks('Estudar mais', 'red');
+// createTask('Cozinhar', 'yellow');
+console.log(document.querySelectorAll('.day'));
+
 
 
 
 // Escreva seu código abaixo.
 
-console.log(daysLi);
