@@ -143,10 +143,10 @@ function addColorNumbers() {
   let divTask = document.querySelector('.task');
   let colorTask = divTask.style.backgroundColor;
 
-  days.addEventListener('click', function(event) {
+  days.addEventListener('click', function (event) {
     let eventColor = event.target.style.color;
 
-    if (eventColor !== colorTask  && selectedTask.length > 0) {
+    if (eventColor !== colorTask && selectedTask.length > 0) {
       let color = selectedTask[0].style.backgroundColor;
 
       event.target.style.color = color;
@@ -159,8 +159,34 @@ function addColorNumbers() {
 }
 addColorNumbers();
 
+function addEvent() {
+
+  let compromisso = document.getElementById('task-input');
+  let ulCompromisso = document.querySelector('.task-list');
+  let btnAdd = document.getElementById('btn-add');
 
 
+  
+    compromisso.addEventListener('keyup', function (event) {
+      let key = event.wich || event.keyCode;
+      if (key == 13) {
+        ulCompromisso.innerText = compromisso.value;
+        if (ulCompromisso.innerText.length == 0) {
+          alert('Adicionar compromisso')
+        } 
+      }
+    });
+    btnAdd.addEventListener('click', function () {
+      ulCompromisso.innerText = compromisso.value;
+      if (ulCompromisso.innerText.length == 0) {
+        alert('Adicionar compromisso')
+      } 
+    })
+  
+
+
+};
+addEvent()
 
 
 
