@@ -101,49 +101,66 @@ function zoomDay() {
 }
 zoomDay();
 
-function myTasks(title, color) {
+function createTask(task) {
+  const divTasks = document.querySelector('.my-tasks');
+  const taskCreate = document.createElement('span');
 
-  const divTasks = document.getElementsByClassName('my-tasks')[0];
+  taskCreate.innerHTML = task;
+  divTasks.appendChild(taskCreate);
+}
+createTask('Estudar:');
 
-  const task = document.createElement('span');
-  task.innerHTML = title;
+function myTasks(color) {
 
-  divTasks.appendChild(task);
-
+  const divTasks = document.querySelector('.my-tasks');
   const divCircle = document.createElement('div');
-  divCircle.classList.add('task');
+
+  divCircle.className = 'task';
   divCircle.style.background = color;
   divTasks.appendChild(divCircle);
 
-  divCircle.addEventListener('click', function (event) {
-    if (divCircle.classList[1] !== ('selected')) {
-      divCircle.classList.add('selected');
+}
+myTasks('red');
 
+function setTaskColor() {
+
+  let colorTasks = document.getElementsByClassName('task selected');
+  let myTasks = document.querySelector('.task');
+
+  myTasks.addEventListener('click', function (event) {
+    if (colorTasks.length === 0) {
+      event.target.className = 'task selected';
     } else {
-      divCircle.classList.remove('selected');
+      event.target.className = 'task';
     };
-    console.log(event.target.classList);
-
-    const daysColor = document.querySelectorAll('.day');
-    
-    // \Exercicio 10 pra terminar
-
-    // for (let day of daysColor) {
-    //   day.addEventListener('click', function () {
-    //     if (day.classList[1] == ('selected') && day.style.background !== color) {
-    //       day.style.background = color;
-    //     } else if (day.classList[1] == ('selected') && day.style.background == color) {
-    //       day.style.background = 'rgb(119,119,119)';
-    //     }
-    //   })
-
-
-    // }
   })
 }
-myTasks('Estudar mais', 'red');
-// createTask('Cozinhar', 'yellow');
-console.log(document.querySelectorAll('.day'));
+setTaskColor();
+
+function addColorNumbers() {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let divTask = document.querySelector('.task');
+  let colorTask = divTask.style.backgroundColor;
+
+  days.addEventListener('click', function(event) {
+    let eventColor = event.target.style.color;
+
+    if (eventColor !== colorTask  && selectedTask.length > 0) {
+      let color = selectedTask[0].style.backgroundColor;
+
+      event.target.style.color = color;
+
+    } else if (colorTask === eventColor && selectedTask.length !== 00) {
+
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  })
+}
+addColorNumbers();
+
+
+
 
 
 
