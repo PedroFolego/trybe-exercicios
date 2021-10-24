@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.2</title>
+  <style>
+    section {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // COLOQUE SEU CÓDIGO AQUI
+    let tagBody = document.querySelector('body');
+
+    let title = document.createElement('h1');
+    title.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+    title.classList.add('title');
+    tagBody.appendChild(title);
+
+    let createMain = document.createElement('main');
+    createMain.classList.add('main-content');
+    tagBody.appendChild(createMain);
+    
+    let createSectionCenter = document.createElement('section');
+    createSectionCenter.classList.add('center-content');
+    createMain.appendChild(createSectionCenter);
+
+    let createSectionLeft = document.createElement('section');
+    createSectionLeft.classList.add('left-content');
+    createMain.appendChild(createSectionLeft);
+
+    let createSectionRight = document.createElement('section');
+    createSectionRight.classList.add('right-content');
+    createSectionRight.style.marginRight = 'auto';
+    createMain.appendChild(createSectionRight);
+
+    let createPSCenter = document.createElement('p');
+    createPSCenter.innerHTML = 'Ola Pessoas de outros planetas!!';
+    createSectionCenter.appendChild(createPSCenter);
+
+    let foto = document.createElement('img');
+    foto.src = 'https://picsum.photos/200';
+    foto.classList.add('small-image');
+    createSectionLeft.appendChild(foto);
+
+    let list = document.createElement('ul');
+    createSectionRight.appendChild(list);
+    let numbers = [];
+    for(i = 1; i <= 10; i += 1) {
+      numbers.push(i);
+    };
+    
+    for (number of numbers) {
+      let addNumero = document.createElement('li');
+      addNumero.innerHTML = number;
+      list.appendChild(addNumero);
+    };
+
+    for(j = 0; j < 3; j += 1){
+      let createH3 = document.createElement('h3');
+      createH3.classList.add('description')
+      createMain.appendChild(createH3);
+    }
+    let firstH3 = document.querySelectorAll('h3')[0];
+    let secondtH3 = document.querySelectorAll('h3')[1];
+    let thirdtH3 = document.querySelectorAll('h3')[2];
+    
+    firstH3.innerHTML = 'primeiro h3';
+    secondtH3.innerHTML = 'segundo h3';
+    thirdtH3.innerHTML = 'terceiro h3';
+
+    createMain.removeChild(createSectionLeft);
+
+    createSectionRight.parentElement.style.background = 'green';
+
+    list.lastChild.remove(numbers);
+    list.lastChild.remove(numbers);
+
+  </script>
+</body>
+
+</html>
