@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  background-color: green;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+#configs {
+  background-color: greenyellow;
+  width: fit-content;
+  
+}
+
+#configs input {
+  width: 100px;
+  
+  margin-right: 10px;
+}
+#configs label{
+  margin: 10px; 
+}
+#btnDiv {
+  
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+main {
+  border: solid 3px black;
+  margin: 5px;
+}
+.margin {
+  text-align: center;
+}
