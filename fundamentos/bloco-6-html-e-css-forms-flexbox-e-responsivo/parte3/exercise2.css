@@ -23,6 +23,7 @@ html {
 
 }
 .head p {
+
   align-self: center;
   font-weight: 700;
   text-transform: uppercase;
@@ -41,47 +42,87 @@ html {
 
 .aside {
   display: flex;
+  flex-flow: column-reverse;
+}
+.aside h2 {
+  text-align: center;
 }
 
 .aside-one { 
-  
-  width: 50%;
   background-color: darkgreen;
   color: aliceblue;
   margin: 5px;
-  padding: 4px;
+  padding: 10px;
   border-radius: 10px;
+}
+.aside-one ul {
+  list-style-type: none;
+  margin-top: 5px;
 }
  
 .aside-two {
-  width: 50%;
+  
   background-color: darkgoldenrod;
   color: aliceblue;
   margin: 5px;
-  padding: 4px;
+  padding: 10px;
   border-radius: 10px;
 }
 .aside-two ul {
   list-style-type: none;
+  margin-top: 5px;
 }
 
 .main-content {
   color: rgb(58, 189, 189);
   margin: 5px;
-  font-size: 20px;
 }
 
 footer {
-  background-color: azure;
+  background-color: gray;
   text-align: center;
   padding: 10px;
   border-radius: 20px;
   margin-top: 10px;
 }
 
+@media screen and (min-width: 750px) {
+  .aside {
+    flex-flow: row;
+    width: 100%;
+  }
+  .aside-one {
+    width: 50%;
+  }
+  .aside-two {
+    width: 50%;
+  }
 
+  .container {
+    font-size: 125%;
+  }
 
+}
 
+@media screen and (min-width: 1100px) {
+  .container {
+    font-size: 150%;
+    max-width: 1100px;
+    display: flex;
+    flex-flow: column;
+    margin: 10px auto; 
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px gray;
+  } 
+  body {
+    background-color: black;
+  }
+  .head {
+    border-radius: 10px;
+  }
+ 
+}
 
 
 
