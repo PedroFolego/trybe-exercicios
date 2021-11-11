@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" maxlength="40" required>
+      <br>
+      <label for="e-mail">E-mail:</label>  
+      <input type="email" name="email" id="e-mail" required>
+      <br>
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" maxlength="11" required>
+      <br>
+      <label for="adress">Endereço:</label>
+      <input type="text" id="adress" name="adress" maxlength="200" required>
+      <br>
+      <label for="Cidade">Cidade: </label>
+      <input type="text" maxlength="28" required>
+      <br>
+      <label for="estado">Estado: </label>
+      <select name="estados" id="estado"></select>
+      <br>
+      <label for="home1">Casa:</label>
+      <input type="radio" name="home" id="home1">
+      <label for="home2">Apartamento:</label>
+      <input type="radio" name="home" id="home2" required>
+    </fieldset>
+    <fieldset>
+      <label for="last-job">Último emprego</label>
+      <br>
+      <textarea name="text" id="last-job" cols="40" rows="10" maxlength="1000" required></textarea>
+      <br>
+      <label for="job">Cargo:</label>
+      <input type="text" name="bla" id="job" maxlength="40" required>
+      <br>
+      <label for="description">Descrição do emprego</label>
+      <input type="text" name="descr" id="description"  maxLength="500" required>
+      <br>
+      <label for="date">Data de início:</label>
+      <input type="date" name="" id="date">
+    </fieldset>
+    <button type="submit" id="btnSave">Salvar</button>
+  </form>
+  <main id="print">
+    dggdg
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
