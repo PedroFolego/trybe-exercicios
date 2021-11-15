@@ -170,43 +170,43 @@ const professionalBoard = [
     specialities: ["Backend"],
   },
 ];
-const validationKeys= detail => {
+// Pesquisa
+const validationKeys = (detail) => {
   if (
     detail !== "id" &&
     detail !== "firstName" &&
     detail !== "lastName" &&
     detail !== "specialities"
   ) {
-    return "Informação indisponível";
-  } else {
-    
+    return true;
   }
-}
-// Pesquisa
+};
+
+const returnValue = (detail, position) => {
+  console.log('entrou');
+  if (detail === "specialities") {
+    return Object.values(professionalBoard[position][detail]);
+  } else {
+    return Object.values(professionalBoard[position][detail]).join("");
+  }
+};
+
+
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
-  return validationKeys(detail);
+  if (validationKeys(detail)) throw new Error("Informação indisponível");
   for (
     let positionProfessional = 0;
     positionProfessional < professionalBoard.length;
     positionProfessional += 1
   ) {
     if (professionalBoard[positionProfessional]["id"] === id) {
-      if (detail === "specialities") {
-        return Object.values(
-          professionalBoard[positionProfessional][detail]
-        );
-      } else {
-        return Object.values(
-          professionalBoard[positionProfessional][detail]
-        ).join("");
-      }
+      return returnValue(detail, positionProfessional);
     }
   }
-  return 'ID não identificada';
+  return "ID não identificada";
 };
 
-console.log(searchEmployee("5569-4", "specialities"));
 module.exports = {
   sum,
   myRemove,

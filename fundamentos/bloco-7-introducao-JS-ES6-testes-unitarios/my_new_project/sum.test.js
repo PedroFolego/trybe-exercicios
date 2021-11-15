@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate } = require('./sum');
+const { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate, searchEmployee } = require('./sum');
 
 describe('testando funções', () => {
   it('testando soma da função (sum)', () => {
@@ -114,3 +114,27 @@ describe('Testa a função hydrate', () => {
   });
 });
 
+describe('Teste a função searchEmployee', () => {
+  it('Verifica searchEmployee como função', () => {
+    expect(typeof searchEmployee).toBe('function');
+  })
+  it('Verifica se chamar o id existente retorno um valor diferente de ID não identificada', () => {
+    expect(searchEmployee("5569-4", "specialities")).not.toBe('ID não identificada');
+  })
+  it('Verifica se chamar o id inexistente retorno ID não identificada', () => {
+    expect(searchEmployee("55695", "specialities")).toBe('ID não identificada');
+    expect(searchEmployee("5569235", "specialities")).toBe('ID não identificada');
+    expect(searchEmployee("556-295", "specialities")).toBe('ID não identificada');
+  })
+  it('Verifica o se o value é correspondente ao chamar a função searchEmployee', () => {
+    expect(searchEmployee('8579-6','lastName')).toBe('Gates');
+    expect(searchEmployee('1256-4','firstName')).toBe('Linda');
+    expect(searchEmployee('9852-2-2','specialities')).toStrictEqual(['Ruby', 'SQL']);
+    expect(searchEmployee('5569-4','id')).toBe('5569-4');
+  })
+  it('Verifica se passar uma informação errada retorna o erro Informação indisponível', () => {
+    expect(() => searchEmployee('8579-6', 'nomeCompleto')).toThrowError('Informação indisponível');
+    expect(() => searchEmployee('5569-4', 'númeroDoRg')).toThrowError('Informação indisponível'); 
+    expect(() => searchEmployee('9852-2-2', 'matrícula')).toThrowError('Informação indisponível');   
+  })
+})
