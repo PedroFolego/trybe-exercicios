@@ -1,3 +1,18 @@
+const people = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 19 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+
+const verifyAges = (arr, minimumAge) => {
+  //Adicione seu código aqui
+  return arr.every((person) => person.age >= minimumAge);
+}
+
+// console.log(verifyAges(people, 18));
+
 const books = [
   {
     id: 1,
@@ -77,5 +92,36 @@ function smallerName() {
   // Variável nameBook que receberá o valor do menor nome;
   return nameBook;
 }
-console.log(smallerName())
+//console.log(smallerName())
 
+function getNamedBook() {
+  // escreva seu código aqui
+  return books.find((character) => character.name.length === 26); 
+}
+//console.log(getNamedBook()); 
+
+function booksOrderedByReleaseYearDesc() {
+  // escreva aqui seu código
+  return books.sort((a, b) => b.releaseYear - a.releaseYear);
+}
+//console.log(booksOrderedByReleaseYearDesc());
+
+function everyoneWasBornOnSecXX() {
+  // escreva seu código aqui
+  return books.every((bornYear) => bornYear.author.birthYear >= 1901 && bornYear.author.birthYear <= 2000); 
+}
+// console.log(everyoneWasBornOnSecXX());
+
+function someBookWasReleaseOnThe80s() {
+  // escreva seu código aqui
+  return books.some((book) => book.releaseYear > 1980 && book.releaseYear < 1990);
+}
+// console.log(someBookWasReleaseOnThe80s());
+
+function authorUnique() {
+  return books.every((book) =>
+    !books.some((bookSome) =>
+      (bookSome.author.birthYear === book.author.birthYear)
+      && (bookSome.author.name !== book.author.name)));
+}
+// console.log(authorUnique());
