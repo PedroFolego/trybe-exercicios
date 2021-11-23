@@ -71,8 +71,20 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-const damageDragon = strength => Math.round(Math.random() * (strength - 15) + 15); 
+const damageDragon = () => Math.round(Math.random() * (dragon.strength - 15) + 15); 
 
-const damageWarrior = (weaponDmg, strength) =>  Math.round(Math.random() * (weaponDmg * strength - strength) + strength);
+const damageWarrior = () =>  Math.round(Math.random() * (warrior.weaponDmg * warrior.strength - warrior.strength) + warrior.strength);
 
-console.log(damageWarrior(2, 30));
+const damageMage = () => {
+  mage.mana -= 15;
+
+  if (mage.mana <= 14.9) return { 
+    damage: 'Não possui mana suficiente', 
+    mana: 0 
+  }
+  
+  return {
+    damage: Math.round(Math.random() * mage.intelligence + mage.intelligence),
+    mana: mage.mana - 15,
+  }
+}
