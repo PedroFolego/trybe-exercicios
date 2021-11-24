@@ -52,7 +52,7 @@ const checkTest = (correctAnswers, answers, func) => func(correctAnswers, answer
 const mage = {
   healthPoints: 130,
   intelligence: 45,
-  mana: 125,
+  mana: 130,
   damage: undefined,
 };
 
@@ -77,14 +77,68 @@ const damageWarrior = () =>  Math.round(Math.random() * (warrior.weaponDmg * war
 
 const damageMage = () => {
   mage.mana -= 15;
-
-  if (mage.mana <= 14.9) return { 
-    damage: 'Não possui mana suficiente', 
-    mana: 0 
-  }
-  
-  return {
-    damage: Math.round(Math.random() * mage.intelligence + mage.intelligence),
-    mana: mage.mana - 15,
-  }
+  if (mage.mana <= 15 || isNaN(mage.mana)) {
+    mage.mana = 'Não possui mana suficiente' 
+    return mage.damage = 0;
+  };
+  return Math.round(Math.random() * mage.intelligence + mage.intelligence)
 }
+
+const gameActions = {
+  // Crie as HOFs neste objeto.
+  turnWarrior: (dmg = damageWarrior()) => {
+    if ( warrior.healthPoints <= 0 ) {
+      warrior.damage = 0;
+      warrior.mana = 0;
+      warrior.healthPoints = 'C-Fodeu'
+    } else {
+    dragon.healthPoints -= dmg;
+    warrior.damage = dmg;
+    }
+  },
+  turnMage: (dmg = damageMage()) => {
+    if ( mage.healthPoints <= 0 ) {
+      mage.damage = 0;
+      mage.mana = 0;
+      mage.healthPoints = 'C-Fodeu'
+    } else {
+    dragon.healthPoints -= dmg;
+    mage.damage = dmg;
+    }
+  },
+  turnDragon: (dmg = damageDragon()) => {
+    warrior.healthPoints -= dmg;
+    mage.healthPoints -= dmg;
+    dragon.damage = dmg;
+  },
+  resultTurn: () => {
+    
+    gameActions.turnWarrior();
+    gameActions.turnMage();
+    gameActions.turnDragon();
+    
+    console.log(`MAGE
+Dano: ${mage.damage}
+Vida: ${isNaN(mage.healthPoints) ? 'C-Fodeu' : mage.healthPoints}
+Inteligência: ${mage.intelligence}
+Mana: ${mage.mana}
+
+WARRIOR
+Dano: ${warrior.damage}
+Vida: ${isNaN(warrior.healthPoints) ? 'C-Fodeu' : warrior.healthPoints}
+Força: ${warrior.strength}
+Dano da arma: ${warrior.weaponDmg} 
+
+DRAGON
+Dano: ${dragon.damage}
+Vida: ${dragon.healthPoints}
+Força: ${dragon.strength}
+------------`
+) 
+    if (warrior.damage === 0 && mage.damage === 0 ) return console.log('Dragão Venceu');
+    if (dragon.healthPoints <= 0) return console.log('Viajantes Venceram');
+    return gameActions.resultTurn(); 
+    }
+};
+
+gameActions.resultTurn();
