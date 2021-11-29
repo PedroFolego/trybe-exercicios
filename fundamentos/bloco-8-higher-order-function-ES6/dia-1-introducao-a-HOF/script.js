@@ -140,5 +140,4 @@ Força: ${dragon.strength}
     return gameActions.resultTurn(); 
     }
 };
-
-gameActions.resultTurn();
+// gameActions.resultTurn();
