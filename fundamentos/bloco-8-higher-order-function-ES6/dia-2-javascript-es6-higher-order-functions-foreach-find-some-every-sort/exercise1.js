@@ -100,6 +100,7 @@ function getNamedBook() {
 }
 //console.log(getNamedBook()); 
 
+
 function booksOrderedByReleaseYearDesc() {
   // escreva aqui seu código
   return books.sort((a, b) => b.releaseYear - a.releaseYear);
@@ -125,3 +126,4 @@ function authorUnique() {
       && (bookSome.author.name !== book.author.name)));
 }
 // console.log(authorUnique());
+
