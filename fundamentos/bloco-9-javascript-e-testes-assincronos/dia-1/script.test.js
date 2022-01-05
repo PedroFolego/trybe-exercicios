@@ -1,0 +1,1 @@
+const { uppercase } = require('script.js')
