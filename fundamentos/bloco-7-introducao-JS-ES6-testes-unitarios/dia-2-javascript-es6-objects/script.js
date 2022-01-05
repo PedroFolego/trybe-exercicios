@@ -85,7 +85,7 @@ const allLessons = {};
 allLessons.lesson1 = Object.assign({}, lesson1) ;
 allLessons.lesson3 = Object.assign({}, lesson2) ;
 allLessons.lesson2 = Object.assign({}, lesson3) ;
-console.log(allLessons);
+//console.log(allLessons);
 
 const numberStudents = () => {
   return allLessons.lesson1.numeroEstudantes + allLessons.lesson3.numeroEstudantes + allLessons.lesson2.numeroEstudantes;
@@ -109,9 +109,31 @@ const checkValue = (obj, key, value) => {
 //checkValue(lesson1, 'materia', 'Matemática');
 //console.log(Object.keys(lesson1)[0]);
 
+const lessons = [ lesson1, lesson2, lesson3 ];
 
+const studentsMath = () => {
+  return lessons.reduce((acc, lesson) => {
+    if (lesson.materia == 'Matemática') {
+      acc += lesson.numeroEstudantes;
+    }
+    return acc;
+  }, 0);
+}
+//console.log(studentsMath());
 
-
-
+const teacherClasses = (arr, teacher) => {
+  return arr.reduce((acc, lesson) => {
+    if ( lesson.professor === teacher ) {
+      acc.aulas.push(lesson.materia);
+      acc.estudantes += lesson.numeroEstudantes;
+    }
+    return acc;
+  }, {
+    professor: teacher,
+    aulas: [],
+    estudantes: 0,
+  })
+}
+console.log(teacherClasses(lessons, 'Maria Clara'));
 
 
