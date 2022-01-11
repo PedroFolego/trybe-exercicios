@@ -1,0 +1,22 @@
+import React from "react";
+
+class Boleano extends React.Component {
+
+  render() {
+    const { value, handleChange } = this.props;
+  
+    return (
+      <label>
+        Você gosta de chocolate?
+        <input
+          type="checkbox"
+          name='boleano'
+          value={value}
+          onChange={handleChange}
+        />
+      </label>
+    )
+  }
+}
+
+export default Boleano;

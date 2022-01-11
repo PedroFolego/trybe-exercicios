@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+
+
+class NomeDoFulano extends Component {
+
+  render() {
+    const { handleChange, value} = this.props;
+
+    let error = undefined;
+    if (value.length > 20) error = 'Nome muito grande';
+
+    return (
+      <labe>
+        Diga seu nome:
+        <input
+          type="text"
+          name='nome'
+          value={value}
+          onChange={handleChange}
+        />
+        <span>{error !== undefined ? error : ''}</span>
+      </labe>
+    )
+  }
+
+}
+
+
+export default NomeDoFulano;

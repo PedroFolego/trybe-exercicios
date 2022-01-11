@@ -6,7 +6,7 @@ class BtnInfo extends React.Component {
     const { value } = this.props;
     const id = document.getElementById('formCompleted');
     return (
-      id = <DadosSalvos dadosDaPessoa={value} />
+      <DadosSalvos dadosDaPessoa={value} />
     )
   }
   render() {
