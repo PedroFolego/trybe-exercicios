@@ -7,14 +7,13 @@ const SCHEMA = Joi.object({
   // league: Joi.string(),
 })
 
-
 const validateObj = (req, res, next) => {
-  const { name, initials, country, league } = req.body;
+  const { name, initials, country } = req.body;
 
   const { error } = SCHEMA.validate({ name , initials, country });
 
   if(error) next({ status: 400, message: error.message });
-  
+
   next();
 }
 
